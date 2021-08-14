@@ -34,7 +34,7 @@ $(function () {
             data: data,
             success: function (res) {
                 if (res.code !== 0) {
-                    return layer.msg(res.msg)
+                    return layer.msg('注册失败')
                 }
                 layer.msg('注册成功,请登录');
                 $('#link-login').click();
@@ -55,7 +55,7 @@ $(function () {
                 }
                 layer.msg("登陆成功")
                 localStorage.setItem('token', res.token)
-                // location.href = "/index.html"
+                location.href = "/index.html"
             }
         })
     })
