@@ -5,53 +5,52 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../assets/css/user_info/user_info.css" />
+    <link rel="stylesheet" href="../assets/css/user_pwd/user_pwd.css" />
     <link rel="stylesheet" href="../assets/lib/layui/css/layui.css" />
   </head>
+
   <body>
     <div class="layui-card">
-      <div class="layui-card-header">修改用户信息</div>
+      <div class="layui-card-header">修改密码</div>
       <div class="layui-card-body">
-        <form class="layui-form" lay-filter="formUserInfo">
-          <input type="hidden" name="id" />
+        <form class="layui-form">
           <div class="layui-form-item">
-            <label class="layui-form-label">登录名称</label>
+            <label class="layui-form-label">输入原密码</label>
             <div class="layui-input-block">
               <input
-                type="text"
-                name="username"
+                type="password"
+                name="old_pwd"
                 required
-                lay-verify="required"
-                placeholder="请输入登录名称"
-                autocomplete="off"
-                class="layui-input"
-                readonly
-              />
-            </div>
-          </div>
-          <div class="layui-form-item">
-            <label class="layui-form-label">用户昵称</label>
-            <div class="layui-input-block">
-              <input
-                type="text"
-                name="nickname"
-                required
-                lay-verify="required|nickname"
-                placeholder="请输入用户昵称"
+                lay-verify="required|pwd"
+                placeholder="请输入原密码"
                 autocomplete="off"
                 class="layui-input"
               />
             </div>
           </div>
           <div class="layui-form-item">
-            <label class="layui-form-label">用户邮箱</label>
+            <label class="layui-form-label">输入新密码</label>
             <div class="layui-input-block">
               <input
-                type="text"
-                name="email"
+                type="password"
+                name="new_pwd"
                 required
-                lay-verify="required|email"
-                placeholder="请输入用户邮箱"
+                lay-verify="required|pwd|samePwd"
+                placeholder="请输入新密码"
+                autocomplete="off"
+                class="layui-input"
+              />
+            </div>
+          </div>
+          <div class="layui-form-item">
+            <label class="layui-form-label">确认密码</label>
+            <div class="layui-input-block">
+              <input
+                type="password"
+                name="re_pwd"
+                required
+                lay-verify="required|pwd|repwd"
+                placeholder="请再次新密码"
                 autocomplete="off"
                 class="layui-input"
               />
@@ -60,13 +59,9 @@
           <div class="layui-form-item">
             <div class="layui-input-block">
               <button class="layui-btn" lay-submit lay-filter="formDemo">
-                提交修改
+                修改密码
               </button>
-              <button
-                type="reset"
-                class="layui-btn layui-btn-primary"
-                id="btnReset"
-              >
+              <button type="reset" class="layui-btn layui-btn-primary">
                 重置
               </button>
             </div>
@@ -75,9 +70,10 @@
       </div>
     </div>
     <!-- 导入layui的js -->
-    <script src="../assets/lib/jquery.js"></script>
+
     <script src="../assets/lib/layui/layui.all.js"></script>
+    <script src="../assets/lib/jquery.js"></script>
     <script src="../assets/js/baseApi.js"></script>
-    <script src="../assets/js/user/user.js"></script>
+    <script src="../assets/js/user/user_pwd.js"></script>
   </body>
 </html>
