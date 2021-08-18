@@ -5,7 +5,7 @@ $(function () {
             function (index) {
                 localStorage.removeItem("token");
                 location.href = "/login.html";
-                layer.close(index);
+                layer.close('index');
             })
     });
 
